@@ -4416,6 +4416,7 @@ if __name__ == "__main__":
             # attach to the weechat hooks we need
 
             tokens = map(string.strip, config.slack_api_token.split(','))
+            tokens.remove('')
             w.prnt('', 'Connecting to {} slack team{}.'
                     .format(len(tokens), '' if len(tokens) == 1 else 's'))
             for t in tokens:
